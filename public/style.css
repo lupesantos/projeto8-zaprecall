@@ -7,6 +7,7 @@
 body{
   font-family: 'Righteous', cursive;
   background-color: #FB6B6B;
+  height: 667px;
 }
 
 /* font-family: 'Recursive', sans-serif; */
@@ -14,9 +15,6 @@ p{
   font-family: 'Recursive', sans-serif;
 }
 
-.All{
-  display: flex;
-}
 .Main {
   width: 375px;
   height: 667px;
@@ -48,7 +46,9 @@ p{
   align-items: center;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
 }
-
+.QuestionsPai{
+  position: relative;
+}
 .Questions{
   width: 375px;
   height: 667px;
@@ -57,8 +57,8 @@ p{
   justify-content: center;
   align-items:center;
   gap: 30px;
-  border: 1px solid #D70900; /*TEMPORARIO*/
-  position: relative;
+  overflow: auto;
+  padding-bottom: 100px;
 }
 .QuestionsHeader{
   display: flex;
@@ -83,7 +83,6 @@ p{
   align-items: center;
   padding: 15px;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
-
 }
 
 .Question ion-icon{
@@ -96,21 +95,25 @@ p{
   font-weight: 400;
   background-color: #FFFFD4;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   position: relative;
   padding: 15px;
-  transform: all 1s;
+  position: relative;
 }
+
+
 
 .Appear{
 
 }
 
 
-.Answer ion-icon{
+.Answer img{
   font-size: 30px;
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   right: 15px;
 }
 
@@ -126,11 +129,13 @@ p{
 }
 
 .AnswerBack p {
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 .Alternatives{
   display: flex;
   gap: 10px;
+  position: absolute;
+  bottom: 10px;
 }
 
 .RedBox{

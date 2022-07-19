@@ -1,6 +1,11 @@
 import React from "react";
 
-function QuestionAnswer (){
+function QuestionAnswer (
+    {
+    index,
+    question, 
+    answer
+    }){
 
     const [appear, setAppear] = React.useState("");
     const [appear2, setAppear2] = React.useState("Disappear");
@@ -24,7 +29,6 @@ function QuestionAnswer (){
             setAppear3("Appear");
         }
     }
-
     function check(cor)
     {
         setAppear3("Disappear");
@@ -46,15 +50,15 @@ function QuestionAnswer (){
     return(
         <div className="QuestionAnswer">
                 <div onClick={aparecer} className={`Question ${appear}`}>
-                  <p>Pergunta 1</p>
+                  <p>Flashcard {index}</p>
                   <ion-icon name="play-outline"></ion-icon>
                 </div>
                 <div onClick={aparecer2} className={`Answer ${appear2}`}>
-                    <p>O que é JSX?</p>
-                    <ion-icon name="return-down-forward"></ion-icon>
+                    <p>{question}</p>
+                    <img src="assets/setinha.png"></img>
                 </div>
                 <div className={`AnswerBack ${appear3}`}>
-                    <p>JSX é uma sintaxe para escrever HTML dentro do JS</p>
+                    <p>{answer}</p>
                     <div className="Alternatives">
                         <div onClick={()=>check("red")} className={`RedBox ${appear4}`}>Não lembrei</div>
                         <div onClick={()=>check("orange")} className={`OrangeBox ${appear4}`}>Quase não lembrei</div>

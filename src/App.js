@@ -1,8 +1,19 @@
+import React from "react";
+import Questions from "./Questions";
+
+
 function App()
 {
+    
+
     return(
-        <div>
-            Hello!
+        <div className="All">
+            <div className="Main">
+              <img src="assets/image1.png"></img>
+              <div className="Zap">ZapRecall</div>
+              <div className="InicialButton">Iniciar Recall!</div>
+            </div>
+            <Questions />
         </div>
     )
 }

@@ -10,7 +10,7 @@ function Main()
 
     return(
         <div onClick={sumirMain}   className={`Main ${disappear}`}>
-              <img src="assets/image1.png"></img>
+              <img src="assets/image1.png" alt=""></img>
               <div className="Zap">ZapRecall</div>
               <div className="InicialButton">Iniciar Recall!</div>
             </div>

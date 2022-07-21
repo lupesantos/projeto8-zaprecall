@@ -3,18 +3,17 @@
 * {
     box-sizing: border-box;
   }
-  
 body{
   font-family: 'Righteous', cursive;
   background-color: #FB6B6B;
   height: 667px;
 }
-
-/* font-family: 'Recursive', sans-serif; */
 p{
   font-family: 'Recursive', sans-serif;
 }
-
+ion-icon{
+  font-size: 32px;
+}
 .Main {
   width: 375px;
   height: 667px;
@@ -25,14 +24,12 @@ p{
   gap: 30px;
   border: 1px solid #D70900; /*TEMPORARIO*/
 }
-
 .Zap{
   font-size: 36px;
   font-weight: 400;
   color: white;
   line-height: 44.7px;
 }
-
 .InicialButton{
   font-family: 'Recursive', sans-serif;
   width: 246px;
@@ -68,7 +65,6 @@ p{
 .QuestionsHeader img{
   width: 52px;
 }
-
 .Question{
   font-size: 16px;
   font-weight: 700;
@@ -84,11 +80,6 @@ p{
   padding: 15px;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
 }
-
-.Question ion-icon{
-  font-size: 23px;
-}
-
 .Answer, .AnswerBack{
   width: 299px;
   height: 131px;
@@ -100,36 +91,45 @@ p{
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   position: relative;
   padding: 15px;
-  position: relative;
 }
-
-
-
-.Appear{
-
-}
-
-
 .Answer img{
   font-size: 30px;
   position: absolute;
   bottom: 10px;
   right: 15px;
 }
+.Party{
+  width: 375px;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 70px;
+}
+.Party1{
+  font-weight: 700;
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
 
+.Party2{
+  width: 200px;
+  text-align: center;
+}
 .QuestionFooter{
   width: 375px;
   height: 70px;
   background-color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
   bottom: 0;
-}
-
-.AnswerBack p {
-  /* margin-bottom: 30px; */
 }
 .Alternatives{
   display: flex;
@@ -137,7 +137,6 @@ p{
   position: absolute;
   bottom: 10px;
 }
-
 .RedBox{
   width: 85px;
   height: 37px;
@@ -177,7 +176,6 @@ p{
   justify-content: center;
   text-align: center;
 }
-
 .AnswerRed, .AnswerOrange, .AnswerGreen{
   font-size: 16px;
   font-weight: 700;
@@ -194,7 +192,6 @@ p{
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   text-decoration-line: line-through;
 }
-
 .AnswerRed{
   color: #FF3030;
 }
@@ -204,7 +201,15 @@ p{
 .AnswerGreen{
   color: #2FBE34;
 }
-
 .Disappear{
   display: none;
+}
+ion-icon[name="close-circle"]{
+  fill: #FF3030;
+}
+ion-icon[name="help-circle"]{
+  fill: #FF922E;
+}
+ion-icon[name="checkmark-circle"]{
+  fill: #2FBE34;
 }

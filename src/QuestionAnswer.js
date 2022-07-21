@@ -4,7 +4,9 @@ function QuestionAnswer (
     {
     index,
     question, 
-    answer
+    answer,
+    counter,
+    setCounter
     }){
 
     const [appear, setAppear] = React.useState("");
@@ -36,27 +38,32 @@ function QuestionAnswer (
         if(cor === "red")
         {
             setAppear5("Appear")
+            setCounter([...counter,"close-circle"])
         }
         else if(cor === "orange")
         {
             setAppear6("Appear")
+            setCounter([...counter,"help-circle"])
         }
         else if (cor === "green")
         {
             setAppear7("Appear")
+            setCounter([...counter,"checkmark-circle"])
         }
     }
 
     return(
         <div className="QuestionAnswer">
                 <div onClick={aparecer} className={`Question ${appear}`}>
-                  <p>Flashcard {index}</p>
-                  <ion-icon name="play-outline"></ion-icon>
+                    <p>Flashcard {index}</p>
+                    <ion-icon name="play-outline"></ion-icon>
                 </div>
+
                 <div onClick={aparecer2} className={`Answer ${appear2}`}>
                     <p>{question}</p>
-                    <img src="assets/setinha.png"></img>
+                    <img src="assets/setinha.png" alt=""></img>
                 </div>
+
                 <div className={`AnswerBack ${appear3}`}>
                     <p>{answer}</p>
                     <div className="Alternatives">
@@ -65,19 +72,22 @@ function QuestionAnswer (
                         <div onClick={()=>check("green")} className={`GreenBox ${appear4}`}>Zap!</div>
                     </div>   
                 </div>
+
                 <div className={`AnswerRed ${appear5}`}>
-                    <p>Pergunta 1</p>
+                    <p>Pergunta {index}</p>
                     <ion-icon name="close-circle"></ion-icon>
                 </div>
+
                 <div className={`AnswerOrange ${appear6}`}>
-                    <p>Pergunta 1</p>
+                    <p>Pergunta {index}</p>
                     <ion-icon name="help-circle"></ion-icon>
                 </div>
+
                 <div className={`AnswerGreen ${appear7}`}>
-                    <p>Pergunta 1</p>
+                    <p>Pergunta {index}</p>
                     <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-              </div>
+        </div>
 
 )
 }

@@ -1,9 +1,16 @@
+import React from "react";
 import QuestionAnswer from "./QuestionAnswer";
+import TasksCounter from "./TasksCounter";
 
 function Questions()
 {   
     let i=0;
     let deck2 = [];
+
+    const [counter, setCounter] = React.useState([])
+    const [appear, setAppear] = React.useState("Disappear")
+    const [appear2, setAppear2] = React.useState("Disappear")
+
     const deck = [
         {
             question: "O que é JSX?",
@@ -38,10 +45,10 @@ function Questions()
             answer: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
         }  
     ]
-
     function comparador() { 
         return Math.random() - 0.5; 
     }
+
     deck.sort(comparador);
 
     for(let j = 0 ; j < 4 ; j++)
@@ -54,19 +61,27 @@ function Questions()
         <div className="QuestionsPai">
             <div className="Questions">
               <div className="QuestionsHeader">
-                <img src="assets/image1.png"></img>
+                <img src="assets/image1.png" alt=""></img>
                 <div className="Zap">ZapRecall</div>
               </div>
-              {deck2.map(item => <QuestionAnswer
+
+              {deck2.map((item, index) => <QuestionAnswer
+                key={index}
                 index={i+=1}
                 question={item.question}
-                answer={item.answer}/>)}
-              
-              <div className="QuestionFooter">
-                <p>0/4 CONCLUÍDOS</p>
-              </div>           
-
+                answer={item.answer}
+                counter={counter}
+                setCounter={setCounter}
+                />)}   
+                    
             </div>
+            <TasksCounter 
+            counter={counter}
+            appear={appear}
+            setAppear={setAppear}
+            appear2={appear2}
+            setAppear2={setAppear2}  
+            />
         </div>
         
     )
